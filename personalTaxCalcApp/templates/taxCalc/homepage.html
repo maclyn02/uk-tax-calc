@@ -5,6 +5,45 @@
     <title></title>
   </head>
   <body>
-    <h2>My Personal tax calculator my page</h2>
+    <h2>My Personal TAX CALCULATOR - UK Version</h2>
+    <br>
+    <form>
+        Annual Pay Allowance:
+        <input type="text" name="annualAllowance" value="12500"/>
+        Weekly NI Allowance:
+        <input type="text" name="niAllowance" value="166"/>
+        Pension Rate:
+        <input type="range" min="0" max="100" name="pensionRate"/>
+
+        Total Number Of Hours:
+        <input type="text" name="numHours"/>
+        Rate Per Hour:
+        <input type="text" name="basicHrRate"/>
+        Overtime(in hours):
+        <input type="text" name="overtimeHours"/>
+        Overtime Rate(%):
+        <input type="range" min="0" max="100" name="overtimeRate"/>
+        Night Hours:
+        <input type="text" name="nightHours"/>
+        Night Rate(%):
+        <input type="range" min="0" max="100" name="nightRate"/>
+
+        Gross Pay(Before tax):
+        <input type="text" name="grossPay" disabled/>
+
+        National Insurance:
+        <input type="text" name="ni" disabled/>
+        Pension Contributions:
+        <input type="text" name="pension" disabled/>
+        PAYE tax:
+        <input type="text" name="paye" disabled/>
+
+        Net Pay(After tax):
+        <input type="text" name="netPay" disabled/>
+
+
+
+
+    </form>
   </body>
 </html>
