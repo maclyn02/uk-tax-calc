@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
 
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/app.js' %}"/>
-
     <title></title>
   </head>
   <body>
@@ -62,5 +59,11 @@
         <input type="text" id="netPay" disabled/>
         <br/>
   </form>
+
+
+  {% load static %}
+  <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+
+  
   </body>
 </html>
