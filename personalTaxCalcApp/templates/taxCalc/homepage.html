@@ -2,48 +2,65 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+
     <title></title>
   </head>
   <body>
     <h2>My Personal TAX CALCULATOR - UK Version</h2>
-    <br>
-    <form>
+    <br/>
+
         Annual Pay Allowance:
-        <input type="text" name="annualAllowance" value="12500"/>
+        <input type="text" id="annualAllowance" value="12500"/>
+        <br/>
         Weekly NI Allowance:
-        <input type="text" name="niAllowance" value="166"/>
+        <input type="text" id="niAllowance" value="166"/>
+        <br/>
         Pension Rate:
-        <input type="range" min="0" max="100" name="pensionRate"/>
+        <input type="text" id="pensionRate"/>
+        <br/>
 
         Total Number Of Hours:
-        <input type="text" name="numHours"/>
+        <input type="text" id="numHours"/>
+        <br/>
         Rate Per Hour:
-        <input type="text" name="basicHrRate"/>
+        <input type="text" id="basicHrRate"/>
+        <br/>
         Overtime(in hours):
-        <input type="text" name="overtimeHours"/>
+        <input type="text" id="overtimeHours"/>
+        <br/>
         Overtime Rate(%):
-        <input type="range" min="0" max="100" name="overtimeRate"/>
+        <input type="text" id="overtimeRate"/>
+        <br/>
         Night Hours:
-        <input type="text" name="nightHours"/>
+        <input type="text" id="nightHours"/>
+        <br/>
         Night Rate(%):
-        <input type="range" min="0" max="100" name="nightRate"/>
+        <input type="text" id="nightRate"/>
+        <br/>
+
+        <button onclick="calculateSalary()">Calculate Now</button>
+        <br/>
 
         Gross Pay(Before tax):
-        <input type="text" name="grossPay" disabled/>
+        <input type="text" id="grossPay" disabled/>
+        <br/>
 
         National Insurance:
-        <input type="text" name="ni" disabled/>
+        <input type="text" id="ni" disabled/>
+        <br/>
         Pension Contributions:
-        <input type="text" name="pension" disabled/>
+        <input type="text" id="pension" disabled/>
+        <br/>
         PAYE tax:
-        <input type="text" name="paye" disabled/>
+        <input type="text" id="paye" disabled/>
+        <br/>
 
         Net Pay(After tax):
-        <input type="text" name="netPay" disabled/>
+        <input type="text" id="netPay" disabled/>
+        <br/>
 
-
-
-
-    </form>
   </body>
 </html>
