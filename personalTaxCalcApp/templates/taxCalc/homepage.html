@@ -3,9 +3,6 @@
   <head>
     <meta charset="utf-8">
 
-    {% load static %}
-    <script type="text/javascript" src="{% static 'js/app.js' %}"/>
-
     <title></title>
   </head>
   <body>
@@ -62,6 +59,10 @@
 
           <button type="button" onclick="calculateSalary();">Calculate Now</button>
           <br/>
+
+          {% load static %}
+          <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+          
     </form>
   </body>
 </html>
