@@ -41,6 +41,10 @@
         <button type="button" onclick="calculateSalary(); return false;">Calculate Now</button>
         <br/>
 
+        {% load static %}
+        <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+
+        
         Gross Pay(Before tax):
         <input type="text" id="grossPay" disabled/>
         <br/>
@@ -61,8 +65,7 @@
   </form>
 
 
-  {% load static %}
-  <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+
 
 
   </body>
