@@ -38,11 +38,11 @@
 
       var netPay = grossPay - pension - ni - paye;
 
-      document.getElementById('grossPay').innerHTML=grossPay;
-      document.getElementById('pension').innerHTML=pension;
-      document.getElementById('ni').innerHTML=ni;
-      document.getElementById('paye').innerHTML=paye;
-      document.getElementById('netPay').innerHTML=netPay;
+      document.getElementById('grossPay').value=grossPay;
+      document.getElementById('pension').value=pension;
+      document.getElementById('ni').value=ni;
+      document.getElementById('paye').value=paye;
+      document.getElementById('netPay').value=netPay;
     };
     </script>
 
@@ -82,21 +82,21 @@
         <br/>
 
         Gross Pay(Before tax):
-        <label id="grossPay"/>
+        <input type="text" id="grossPay"/>
         <br/>
 
         National Insurance:
-        <label id="ni"/>
+        <input type="text" id="ni"/>
         <br/>
         Pension Contributions:
-        <label id="pension"/>
+        <input type="text" id="pension"/>
         <br/>
         PAYE tax:
-        <label id="paye"/>
+        <input type="text" id="paye"/>
         <br/>
 
         Net Pay(After tax):
-        <label id="netPay"/>
+        <input type="text" id="netPay"/>
         <br/>
 
         <button type="button" onclick="calculateSalary();">Calculate Now</button>
