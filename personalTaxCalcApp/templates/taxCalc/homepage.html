@@ -9,7 +9,7 @@
     <script type="text/javascript">
     function calculateSalary(){
 
-      document.getElementById('netPay').innerHTML("netPay");
+      document.getElementById('netPay').innerHTML="net";
 
 
       var numHours = document.getElementById('numHours').value();
@@ -23,24 +23,24 @@
       var nightPay = (nightRate/100)*basicHrRate;
 
       var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (nightHours*nightPay);
-      document.getElementById('grossPay').innerHTML(grossPay);
+      document.getElementById('grossPay').innerHTML=grossPay;
 
       var pensionRate = document.getElementById('pensionRate').value();
       var pension = (pensionRate/100)*grossPay;
-      document.getElementById('pension').innerHTML(pension);
+      document.getElementById('pension').innerHTML=pension;
       var grossMinusPension = grossPay - pension;
 
       var niAllowance = document.getElementById('niAllowance').value();
       var ni = 0.12 * (grossPay - niAllowance*4);
-      document.getElementById('ni').innerHTML(ni);
+      document.getElementById('ni').innerHTML=ni;
 
       var annualAllowance = document.getElementById('annualAllowance').value();
       var taxableGross = grossPay - pension - annualAllowance/13;
       var paye = 0.20 * taxableGross;
-      document.getElementById('paye').innerHTML(paye);
+      document.getElementById('paye').innerHTML=paye;
 
       var netPay = grossPay - pension - ni - paye;
-      document.getElementById('netPay').innerHTML(netPay);
+      document.getElementById('netPay').innerHTML=netPay;
 
       alert("netPay is : "+netPay);
     };
