@@ -38,9 +38,6 @@
         <input type="text" id="nightRate"/>
         <br/>
 
-        <button type="button" onclick="calculateSalary()">Calculate Now</button>
-        <br/>
-
         Gross Pay(Before tax):
         <input type="text" id="grossPay" disabled/>
         <br/>
@@ -59,9 +56,15 @@
         <input type="text" id="netPay" disabled/>
         <br/>
 
-        {% load static %}
-        <script type="text/javascript" src="{% static 'js/app.js' %}"/>
-        
+        <button type="button" onclick="calculateSalary()">Calculate Now
+
+          {% load static %}
+          <script type="text/javascript" src="{% static 'js/app.js' %}"/>
+
+        </button>
+        <br/>
+
+
   </form>
 
 
