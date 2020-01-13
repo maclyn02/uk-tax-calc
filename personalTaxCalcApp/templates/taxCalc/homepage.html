@@ -3,105 +3,65 @@
   <head>
     <meta charset="utf-8">
 
-    <!--{% load static %}
-    <script type="text/javascript" src="{% static 'js/app.js' %}"/>-->
-
-    <script type="text/javascript">
-    function calculateSalary(){
-
-      document.getElementById('netPay').innerHTML="net";
-
-
-      var numHours = document.getElementById('numHours').value;
-      var basicHrRate = document.getElementById('basicHrRate').value;
-      var overtimeHours = document.getElementById('overtimeHours').value;
-      var overtimeRate = document.getElementById('overtimeRate').value;
-      var nightHours = document.getElementById('nightHours').value;
-      var nightRate = document.getElementById('nightRate').value;
-
-      var overtimePay = (overtimeRate/100)*basicHrRate;
-      var nightPay = (nightRate/100)*basicHrRate;
-
-      var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (nightHours*nightPay);
-
-
-      var pensionRate = document.getElementById('pensionRate').value;
-      var pension = (pensionRate/100)*grossPay;
-      var grossMinusPension = grossPay - pension;
-
-      var niAllowance = document.getElementById('niAllowance').value;
-      var ni = 0.12 * (grossPay - niAllowance*4);
-
-      var annualAllowance = document.getElementById('annualAllowance').value;
-      var taxableGross = grossPay - pension - annualAllowance/13;
-      var paye = 0.20 * taxableGross;
-
-      var netPay = grossPay - pension - ni - paye;
-
-      document.getElementById('grossPay').value=grossPay.toPrecision(6);
-      document.getElementById('pension').value=pension.toPrecision(6);
-      document.getElementById('ni').value=ni.toPrecision(6);
-      document.getElementById('paye').value=paye.toPrecision(6);
-      document.getElementById('netPay').value=netPay.toPrecision(6);
-    };
-    </script>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/app.js' %}"/>
 
     <title></title>
   </head>
   <body>
     <h2>My Personal TAX CALCULATOR - UK Version</h2>
     <br/>
-    <form>
-        Annual Pay Allowance:
-        <input type="text" id="annualAllowance" value="12500"/>
-        <br/>
-        Weekly NI Allowance:
-        <input type="text" id="niAllowance" value="166"/>
-        <br/>
-        Pension Rate:
-        <input type="text" id="pensionRate"/>
-        <br/>
+      <form>
+          Annual Pay Allowance:
+          <input type="text" id="annualAllowance" value="12500"/>
+          <br/>
+          Weekly NI Allowance:
+          <input type="text" id="niAllowance" value="166"/>
+          <br/>
+          Pension Rate:
+          <input type="text" id="pensionRate" value="4"/>
+          <br/>
+          <br/>
+          Rate Per Hour:
+          <input type="text" id="basicHrRate" value="8.50"/>
+          <br/>
+          Overtime Rate(%):
+          <input type="text" id="overtimeRate" value="150"/>
+          <br/>
+          Night Rate(%):
+          <input type="text" id="nightRate" value="20"/>
+          <br/>
+          <br/>
 
-        Total Number Of Hours:
-        <input type="text" id="numHours"/>
-        <br/>
-        Rate Per Hour:
-        <input type="text" id="basicHrRate"/>
-        <br/>
-        Overtime(in hours):
-        <input type="text" id="overtimeHours"/>
-        <br/>
-        Overtime Rate(%):
-        <input type="text" id="overtimeRate"/>
-        <br/>
-        Night Hours:
-        <input type="text" id="nightHours"/>
-        <br/>
-        Night Rate(%):
-        <input type="text" id="nightRate"/>
-        <br/>
+          Total Number Of Hours:
+          <input type="text" id="numHours"/>
+          <br/>
+          Overtime(in hours):
+          <input type="text" id="overtimeHours"/>
+          <br/>
+          Night Hours:
+          <input type="text" id="nightHours"/>
+          <br/>
+          <br/>
 
-        Gross Pay(Before tax):
-        <input type="text" id="grossPay"/>
-        <br/>
+          Gross Pay(Before tax):
+          <input type="text" id="grossPay"/>
+          <br/>
+          National Insurance:
+          <input type="text" id="ni"/>
+          <br/>
+          Pension Contributions:
+          <input type="text" id="pension"/>
+          <br/>
+          PAYE tax:
+          <input type="text" id="paye"/>
+          <br/>
+          Net Pay(After tax):
+          <input type="text" id="netPay"/>
+          <br/>
 
-        National Insurance:
-        <input type="text" id="ni"/>
-        <br/>
-        Pension Contributions:
-        <input type="text" id="pension"/>
-        <br/>
-        PAYE tax:
-        <input type="text" id="paye"/>
-        <br/>
-
-        Net Pay(After tax):
-        <input type="text" id="netPay"/>
-        <br/>
-
-        <button type="button" onclick="calculateSalary();">Calculate Now</button>
-        <br/>
-  </form>
-
+          <button type="button" onclick="calculateSalary();">Calculate Now</button>
+          <br/>
+    </form>
   </body>
 </html>
