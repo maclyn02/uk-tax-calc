@@ -9,7 +9,9 @@
     <script type="text/javascript">
     function calculateSalary(){
 
-    alert("hello");
+      document.getElementById('netPay').innerHTML("netPay");
+
+
       var numHours = document.getElementById('numHours').value();
       var basicHrRate = document.getElementById('basicHrRate').value();
       var overtimeHours = document.getElementById('overtimeHours').value();
@@ -80,21 +82,21 @@
         <br/>
 
         Gross Pay(Before tax):
-        <input type="text" id="grossPay" disabled/>
+        <p id="grossPay"><p/>
         <br/>
 
         National Insurance:
-        <input type="text" id="ni" disabled/>
+        <p id="ni"><p/>
         <br/>
         Pension Contributions:
-        <input type="text" id="pension" disabled/>
+        <p id="pension"><p/>
         <br/>
         PAYE tax:
-        <input type="text" id="paye" disabled/>
+        <p id="paye"></p>
         <br/>
 
         Net Pay(After tax):
-        <input type="text" id="netPay" disabled/>
+        <p id="netPay"><p/>
         <br/>
 
         <button type="button" onclick="calculateSalary();">Calculate Now</button>
