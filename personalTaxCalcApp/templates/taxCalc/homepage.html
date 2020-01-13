@@ -38,7 +38,7 @@
 
       var netPay = grossPay - pension - ni - paye;
 
-      document.getElementById('grossPay').value=grossPay;
+      document.getElementById('grossPay').value=grossPay.toPrecision(6);
       document.getElementById('pension').value=pension;
       document.getElementById('ni').value=ni;
       document.getElementById('paye').value=paye;
