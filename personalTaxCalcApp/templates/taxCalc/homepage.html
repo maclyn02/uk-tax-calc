@@ -4,6 +4,9 @@
     <meta charset="utf-8">
 
     <title></title>
+    {% load static %}
+    <script type="text/javascript" src="{% static 'js/app.js' %}"/></script>
+    <script type="text/javascript" src="{% static 'js/genResultsTemplate.js' %}"/></script>
   </head>
   <body>
     <h2>My Personal TAX CALCULATOR - UK Version</h2>
@@ -36,9 +39,6 @@
           </tr>
           <tr>
             <td>
-              {% load static %}
-              <script type="text/javascript" src="{% static 'js/genResultsTemplate.js' %}"/></script>
-
               <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
               <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
               <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
@@ -46,7 +46,7 @@
           </tr>
         </table>
 
-        <div class="results-container">
+        <div id="results-container">
           <table>
             <tr>
               <td>Rate Per Hour:</td>
@@ -80,8 +80,7 @@
           <table>
             <tr>
               <td>
-                {% load static %}
-                <script type="text/javascript" src="{% static 'js/app.js' %}"/></script>
+
                 <button type="button" onclick="calculateSalary();">Calculate Now</button>
               </td>
             </tr>

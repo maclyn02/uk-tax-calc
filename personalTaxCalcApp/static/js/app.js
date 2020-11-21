@@ -3,7 +3,7 @@ function calculateSalary(){
   var grossPay = 0
 
   var selectedTimeframe = ""
-  var radioBtns = document.querySelectorAll(`input[name='timeframe']`))
+  var radioBtns = document.querySelectorAll(`input[name='timeframe']`)
   radioBtns.forEach((button, i) => {
     if(button.checked)
       selectedTimeframe = button.value;
@@ -45,6 +45,7 @@ function calculateSalary(){
   document.getElementById('paye').value=Number(paye).toPrecision(6);
   document.getElementById('netPay').value=Number(netPay).toPrecision(6);
 };
+
 function calculateHourlyGross(){
 
   var numHours = document.getElementById('numHours').value;
