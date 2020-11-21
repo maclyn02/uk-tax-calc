@@ -16,6 +16,7 @@ input{
   border-color: LightPink;
   margin: 10px 0px 10px 0px;
   font-size: 20px;
+  text-align: center;
 }
 
 button{
@@ -34,6 +35,10 @@ button{
   background-color: Linen;
   padding: 20px 100px 20px 100px;
   margin: 50px 50px 50px 50px;
+  font-size: 15px;
+}
+#results-container>input{
+  font-size: 15px;
 }
 
 .net-pay-container{
@@ -46,4 +51,7 @@ button{
   justify-content: center;
   border-radius: 10px;
   margin: auto;
+}
+.net-pay-container>input{
+  border-width: 0px;
 }
