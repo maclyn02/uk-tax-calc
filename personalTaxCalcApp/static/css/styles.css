@@ -1,21 +1,34 @@
 body{
-  background-color: darkgrey;
+  background-color: Gray;
 }
 
 .container{
-  background-color: grey;
+  background-color: LightGrey;
   max-width: 800px;
   margin: auto;
+  border-radius: 30px;
 }
 
-.results-container{
-  background-color: white;
+input{
+  width: 100px;
+  background-color: inherit;
+  border-radius: 10px;
+  border-color: LightPink;
+}
+
+#results-container{
+  background-color: Linen;
   padding: 100px 100px 100px 100px;
+  border-radius: 30px;
 }
 
 .net-pay-container{
-  background-color: green;
+  background-color: LightGreen;
   height: 100px;
   width: 500px;
   font-size: 20px;
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  border-radius: 30px;
 }
