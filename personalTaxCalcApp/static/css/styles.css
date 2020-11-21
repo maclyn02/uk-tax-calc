@@ -16,6 +16,13 @@ input{
   border-color: LightPink;
 }
 
+button{
+  height: 30px;
+  width: 100px;
+  background-color: MediumPurple;
+  border-color: Violet;
+}
+
 #results-container{
   background-color: Linen;
   padding: 100px 100px 100px 100px;
@@ -23,7 +30,7 @@ input{
 }
 
 .net-pay-container{
-  background-color: LightGreen;
+  background-color: Thristle;
   height: 100px;
   width: 500px;
   font-size: 20px;
