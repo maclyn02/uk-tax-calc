@@ -9,7 +9,7 @@
     <h2>My Personal TAX CALCULATOR - UK Version</h2>
     <br/>
       <form>
-        <table>
+        <table border="1">
           <tr>
             <td>Annual Tax-Free Allowance:</td>
             <td><input type="text" id="annualAllowance" value="12500"/></td>
@@ -31,15 +31,17 @@
             <td><input type="text" id="pensionRate" value="5"/>%</td>
           </tr>
           <tr>
-            <td>
-              <hr>
-            </td>
+            <td><hr></td>
+            <td><hr></td>
           </tr>
           <tr>
             <td>
-              <input type="radio" name="timeframe" id="annual" value="annual">Annual
-              <input type="radio" name="timeframe" id="monthly" value="monthly">Monthly
-              <input type="radio" name="timeframe" id="hourly" value="hourly" checked>Hourly
+              {% load static %}
+              <script type="text/javascript" src="{% static 'js/genResultsTemplate.js' %}"/></script>
+
+              <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
+              <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
+              <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
             </td>
           </tr>
         </table>
@@ -72,6 +74,10 @@
               <td>Additional Compensation(NO NI DEDUCTED):</td>
               <td><input type="text" id="additionalCompensationNONI" value="0"/>times</td>
             </tr>
+          </table>
+        </div>
+        <div>
+          <table>
             <tr>
               <td>
                 {% load static %}
@@ -100,7 +106,7 @@
             Net Pay(After tax):
             <input type="text" id="netPay"/>
           </div>
-        </div>
+      </div>
     </form>
   </body>
 </html>

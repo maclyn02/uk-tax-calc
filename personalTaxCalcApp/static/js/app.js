@@ -1,19 +1,24 @@
 function calculateSalary(){
 
-  var numHours = document.getElementById('numHours').value;
-  var basicHrRate = document.getElementById('basicHrRate').value;
-  var overtimeHours = document.getElementById('overtimeHours').value;
-  var overtimeRate = document.getElementById('overtimeRate').value;
-  var additionalOvertimeRate = document.getElementById('additionalOvertimeRate').value;
-  var additionalOvertimeHours = document.getElementById('additionalOvertimeHours').value;
-  var additionalCompensation = document.getElementById('additionalCompensation').value;
+  var grossPay = 0
 
-  var overtimePay = overtimeRate*basicHrRate;
-  var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
+  var selectedTimeframe = ""
+  var radioBtns = document.querySelectorAll(`input[name='timeframe']`))
+  radioBtns.forEach((button, i) => {
+    if(button.checked)
+      selectedTimeframe = button.value;
+  });
 
-  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + Number(additionalCompensation);
-  console.log(grossPay)
+  switch (selectedTimeframe) {
+    case hourly:  grossPay = calculateHourlyGross();
+                  break;
+    case monthly:  grossPay = calculateMonthlyGross();
+                  break;
+    case annual:  grossPay = calculateAnnualGross();
+                  break;
+  }
 
+  console.log(grossPay);
 
   var additionalCompensationNONI = document.getElementById('additionalCompensationNONI').value;
 
@@ -39,4 +44,35 @@ function calculateSalary(){
   document.getElementById('ni').value=Number(ni).toPrecision(6);
   document.getElementById('paye').value=Number(paye).toPrecision(6);
   document.getElementById('netPay').value=Number(netPay).toPrecision(6);
+};
+function calculateHourlyGross(){
+
+  var numHours = document.getElementById('numHours').value;
+  var basicHrRate = document.getElementById('basicHrRate').value;
+  var overtimeHours = document.getElementById('overtimeHours').value;
+  var overtimeRate = document.getElementById('overtimeRate').value;
+  var additionalOvertimeRate = document.getElementById('additionalOvertimeRate').value;
+  var additionalOvertimeHours = document.getElementById('additionalOvertimeHours').value;
+  var additionalCompensation = document.getElementById('additionalCompensation').value;
+
+  var overtimePay = overtimeRate*basicHrRate;
+  var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
+
+  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + Number(additionalCompensation);
+
+  return grossPay;
+
+};
+
+function calculateMonthlyGross(){
+
+  var grossPay = Number(document.getElementById('monthlyBaseSalary').value);
+  return grossPay;
+
+};
+function calculateAnnualGross(){
+
+  var grossPay = Number(document.getElementById('annualBaseSalary').value);
+  return grossPay;
+
 };
