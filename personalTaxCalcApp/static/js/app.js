@@ -10,9 +10,11 @@ function calculateSalary(){
 
   var overtimePay = overtimeRate*basicHrRate;
   var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
+  console.log(numHours*basicHrRate);
+  console.log(overtimePay);
+  console.log(additionalOvertimePay);
 
-  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay);
-  grossPay+=additionalCompensation
+  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + additionalCompensation
   console.log(grossPay)
 
   var pensionRate = document.getElementById('pensionRate').value;
@@ -27,14 +29,14 @@ function calculateSalary(){
   var annualAllowance = document.getElementById('annualAllowance').value;
   var taxableGross = grossPay - pension - annualAllowance/12;
   var paye = 0.20 * taxableGross;
-  console.console.log(paye);
+  console.log(paye);
 
   var netPay = grossPay - pension - ni - paye;
   console.log(netPay);
 
-  // document.getElementById('grossPay').value=grossPay.toPrecision(6);
-  // document.getElementById('pension').value=pension.toPrecision(6);
-  // document.getElementById('ni').value=ni.toPrecision(6);
-  // document.getElementById('paye').value=paye.toPrecision(6);
-  // document.getElementById('netPay').value=netPay.toPrecision(6);
+  document.getElementById('grossPay').value=grossPay.toPrecision(6);
+  document.getElementById('pension').value=pension.toPrecision(6);
+  document.getElementById('ni').value=ni.toPrecision(6);
+  document.getElementById('paye').value=paye.toPrecision(6);
+  document.getElementById('netPay').value=netPay.toPrecision(6);
 };
