@@ -14,8 +14,11 @@ function calculateSalary(){
   var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + Number(additionalCompensation);
   console.log(grossPay)
 
+
+  var additionalCompensationNONI = document.getElementById('additionalCompensationNONI').value;
+
   var pensionRate = document.getElementById('pensionRate').value;
-  var pension = (pensionRate/100)*grossPay;
+  var pension = (pensionRate/100)*(grossPay+Number(additionalCompensationNONI));
   var grossMinusPension = grossPay - pension;
   console.log(grossMinusPension);
 
@@ -24,7 +27,7 @@ function calculateSalary(){
   console.log(ni);
 
   var annualAllowance = document.getElementById('annualAllowance').value;
-  var taxableGross = grossPay - pension - annualAllowance/12;
+  var taxableGross = grossPay + Number(additionalCompensationNONI) - pension - annualAllowance/12;
   var paye = 0.20 * taxableGross;
   console.log(paye);
 
