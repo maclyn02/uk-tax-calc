@@ -61,6 +61,7 @@ button{
   margin: auto;
 }
 .net-pay-container>input{
+  width: 150px;
   border-width: 0px;
   font-size: 30px;
 }
