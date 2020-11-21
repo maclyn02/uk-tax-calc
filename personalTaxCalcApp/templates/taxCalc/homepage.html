@@ -15,7 +15,7 @@
             <td><input type="number" id="annualAllowance" value="12500"/></td>
           </tr>
           <tr>
-            <td>Weekly NI Allowance:</td>
+            <td>Annual NI Allowance:</td>
             <td><input type="number" id="niAllowance" value="9500"/></td>
           </tr>
           <tr>
@@ -61,6 +61,17 @@
               <td><input type="number" id="additionalOvertimeHours" value="0"/></td>
             </tr>
             <tr>
+              <td>Additional Compensation:</td>
+              <td><input type="number" id="additionalCompensation" value="0"/>times</td>
+            </tr>
+            <tr>
+              <td>
+                {% load static %}
+                <script type="text/javascript" src="{% static 'js/app.js' %}"/></script>
+                <button type="button" onclick="calculateSalary();">Calculate Now</button>
+              </td>
+            </tr>
+            <tr>
               <td>Gross Pay(Before tax):</td>
               <td><input type="text" id="grossPay" disabled/></td>
             </tr>
@@ -80,12 +91,6 @@
           <div class="">
             Net Pay(After tax):
             <input type="text" id="netPay" disabled/>
-            <br>
-
-            {% load static %}
-            <script type="text/javascript" src="{% static 'js/app.js' %}"/></script>
-
-            <button type="button" onclick="calculateSalary();">Calculate Now</button>
           </div>
         </div>
     </form>
