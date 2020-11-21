@@ -10,11 +10,11 @@ function calculateSalary(){
   });
 
   switch (selectedTimeframe) {
-    case hourly:  grossPay = calculateHourlyGross();
+    case "hourly":  grossPay = calculateHourlyGross();
                   break;
-    case monthly:  grossPay = calculateMonthlyGross();
+    case "monthly":  grossPay = calculateMonthlyGross();
                   break;
-    case annual:  grossPay = calculateAnnualGross();
+    case "annual":  grossPay = calculateAnnualGross();
                   break;
   }
 
