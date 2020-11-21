@@ -4,13 +4,12 @@ function calculateSalary(){
   var basicHrRate = document.getElementById('basicHrRate').value;
   var overtimeHours = document.getElementById('overtimeHours').value;
   var overtimeRate = document.getElementById('overtimeRate').value;
-  var nightHours = document.getElementById('nightHours').value;
-  var nightRate = document.getElementById('nightRate').value;
+  var overtimeRate = document.getElementById('additionalOvertimeRate').value;
 
-  var overtimePay = (overtimeRate/100)*basicHrRate;
-  var nightPay = (nightRate/100)*basicHrRate;
+  var overtimePay = overtimeRate*basicHrRate;
+  var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
 
-  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (nightHours*nightPay);
+  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay);
 
 
   var pensionRate = document.getElementById('pensionRate').value;
@@ -18,11 +17,10 @@ function calculateSalary(){
   var grossMinusPension = grossPay - pension;
 
   var niAllowance = document.getElementById('niAllowance').value;
-  var ni = 0.12 * (grossPay - niAllowance*4);
+  var ni = 0.12 * (grossPay - niAllowance/12);
 
   var annualAllowance = document.getElementById('annualAllowance').value;
-  //Assuming 4 weekly pay hence total 13 paydays a year
-  var taxableGross = grossPay - pension - annualAllowance/13;
+  var taxableGross = grossPay - pension - annualAllowance/12;
   var paye = 0.20 * taxableGross;
 
   var netPay = grossPay - pension - ni - paye;
