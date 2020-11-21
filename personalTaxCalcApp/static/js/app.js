@@ -11,7 +11,7 @@ function calculateSalary(){
   var overtimePay = overtimeRate*basicHrRate;
   var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
 
-  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + additionalCompensation;
+  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + Number(additionalCompensation);
   console.log(grossPay)
 
   var pensionRate = document.getElementById('pensionRate').value;
@@ -31,9 +31,9 @@ function calculateSalary(){
   var netPay = grossPay - pension - ni - paye;
   console.log(netPay);
 
-  document.getElementById('grossPay').value=grossPay.toPrecision(6);
-  document.getElementById('pension').value=pension.toPrecision(6);
-  document.getElementById('ni').value=ni.toPrecision(6);
-  document.getElementById('paye').value=paye.toPrecision(6);
-  document.getElementById('netPay').value=netPay.toPrecision(6);
+  document.getElementById('grossPay').value=Number(grossPay).toPrecision(6);
+  document.getElementById('pension').value=Number(pension).toPrecision(6);
+  document.getElementById('ni').value=Number(ni).toPrecision(6);
+  document.getElementById('paye').value=Number(paye).toPrecision(6);
+  document.getElementById('netPay').value=Number(netPay).toPrecision(6);
 };
