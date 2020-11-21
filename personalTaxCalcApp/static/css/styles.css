@@ -9,6 +9,10 @@
   height: 100%;
 }
 
+table{
+  margin: auto;
+}
+
 input{
   width: 100px;
   background-color: inherit;
@@ -21,6 +25,10 @@ input{
 
 .label{
   text-align: right;
+}
+
+.content{
+  text-align: left;
 }
 
 button{
@@ -38,7 +46,7 @@ button{
 #results-container{
   background-color: Linen;
   padding: 20px 5px 20px 5px;
-  margin: 50px 30px 50px 30px;
+  margin: 50px 5px 50px 5px;
 }
 
 .net-pay-container{
