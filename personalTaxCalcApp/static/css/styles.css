@@ -12,6 +12,7 @@ input{
   background-color: inherit;
   border-radius: 6px;
   border-color: LightPink;
+  margin: 10px 20px 10px 20px;
 }
 
 button{
@@ -21,6 +22,8 @@ button{
   border-color: Violet;
   border-width: 6px;
   border-radius: 10px;
+  margin-top: -50px;
+  margin-bottom: 30px;
 }
 
 #results-container{
@@ -32,11 +35,11 @@ button{
 .net-pay-container{
   background-color: AntiqueWhite;
   height: 80px;
-  width: 500px;
+  max-width: 500px;
   font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
-  margin-left: auto;
+  margin: auto;
 }
