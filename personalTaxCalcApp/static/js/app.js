@@ -10,11 +10,8 @@ function calculateSalary(){
 
   var overtimePay = overtimeRate*basicHrRate;
   var additionalOvertimePay= additionalOvertimeRate*basicHrRate;
-  console.log(numHours*basicHrRate);
-  console.log(overtimePay);
-  console.log(additionalOvertimePay);
 
-  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + additionalCompensation
+  var grossPay = (numHours*basicHrRate) + (overtimeHours*overtimePay) + (additionalOvertimeHours*additionalOvertimePay) + additionalCompensation;
   console.log(grossPay)
 
   var pensionRate = document.getElementById('pensionRate').value;
