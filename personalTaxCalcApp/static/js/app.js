@@ -21,6 +21,7 @@ function calculateSalary(){
   var ni = 0.12 * (grossPay - niAllowance*4);
 
   var annualAllowance = document.getElementById('annualAllowance').value;
+  //Assuming 4 weekly pay hence total 13 paydays a year
   var taxableGross = grossPay - pension - annualAllowance/13;
   var paye = 0.20 * taxableGross;
 
