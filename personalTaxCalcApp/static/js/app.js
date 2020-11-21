@@ -4,7 +4,8 @@ function calculateSalary(){
   var basicHrRate = document.getElementById('basicHrRate').value;
   var overtimeHours = document.getElementById('overtimeHours').value;
   var overtimeRate = document.getElementById('overtimeRate').value;
-  var overtimeRate = document.getElementById('additionalOvertimeRate').value;
+  var additionalOvertimeRate = document.getElementById('additionalOvertimeRate').value;
+  var additionalOvertimeHours = document.getElementById('additionalOvertimeHours').value;
   var additionalCompensation = document.getElementById('additionalCompensation').value;
 
   var overtimePay = overtimeRate*basicHrRate;
