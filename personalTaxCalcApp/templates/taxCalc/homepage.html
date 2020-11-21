@@ -2,110 +2,52 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-
-    <title></title>
+    <title>UK tax calculator</title>
     {% load static %}
     <script type="text/javascript" src="{% static 'js/app.js' %}"/></script>
     <script type="text/javascript" src="{% static 'js/genResultsTemplate.js' %}"/></script>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
   </head>
   <body>
     <h2>My Personal TAX CALCULATOR - UK Version</h2>
     <br/>
-      <form>
-        <table border="1">
-          <tr>
-            <td>Annual Tax-Free Allowance:</td>
-            <td><input type="text" id="annualAllowance" value="12500"/></td>
-          </tr>
-          <tr>
-            <td>Annual NI Allowance:</td>
-            <td><input type="text" id="niAllowance" value="9500"/></td>
-          </tr>
-          <tr>
-            <td>PAYE Rate:</td>
-            <td><input type="text" id="payeRate" value="20"/>%</td>
-          </tr>
-          <tr>
-            <td>NI Rate:</td>
-            <td><input type="text" id="niRate" value="12"/>%</td>
-          </tr>
-          <tr>
-            <td>Pension Rate:</td>
-            <td><input type="text" id="pensionRate" value="5"/>%</td>
-          </tr>
-          <tr>
-            <td><hr></td>
-            <td><hr></td>
-          </tr>
-          <tr>
-            <td>
-              <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
-              <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
-              <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
-            </td>
-          </tr>
-        </table>
+    <div class="container">
+      Annual Tax-Free Allowance: <input type="text" id="annualAllowance" value="12500"/>
+      <br>
+      Annual NI Allowance: <input type="text" id="niAllowance" value="9500"/>
+      <br>
+      PAYE Rate: <input type="text" id="payeRate" value="20"/>%
+      <br>
+      NI Rate: <input type="text" id="niRate" value="12"/>%
+      <br>
+      Pension Rate: <input type="text" id="pensionRate" value="5"/>%
+      <hr>
+      <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
+      <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
+      <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
 
-        <div id="results-container">
-          <table>
-            <tr>
-              <td>Rate Per Hour:</td>
-              <td><input type="text" id="basicHrRate" value="8.50"/></td>
-              <td>Number of Hours this month:</td>
-              <td><input type="text" id="numHours" value="160"/></td>
-            </tr>
-            <tr>
-              <td>Overtime Rate Per Hour:</td>
-              <td><input type="text" id="overtimeRate" value="1.5"/>times</td>
-              <td>Number of Hours this month:</td>
-              <td><input type="text" id="overtimeHours" value="0"/></td>
-            </tr>
-            <tr>
-              <td>Additional Overtime Rate Per Hour:</td>
-              <td><input type="text" id="additionalOvertimeRate" value="2"/>times</td>
-              <td>Number of Hours this month:</td>
-              <td><input type="text" id="additionalOvertimeHours" value="0"/></td>
-            </tr>
-            <tr>
-              <td>Additional Compensation:</td>
-              <td><input type="text" id="additionalCompensation" value="0"/>times</td>
-            </tr>
-            <tr>
-              <td>Additional Compensation(NO NI DEDUCTED):</td>
-              <td><input type="text" id="additionalCompensationNONI" value="0"/>times</td>
-            </tr>
-          </table>
-        </div>
-        <div>
-          <table>
-            <tr>
-              <td>
-
-                <button type="button" onclick="calculateSalary();">Calculate Now</button>
-              </td>
-            </tr>
-            <tr>
-              <td>Gross Pay(Before tax):</td>
-              <td><input type="text" id="grossPay"/></td>
-            </tr>
-            <tr>
-              <td>PAYE tax:</td>
-              <td><input type="text" id="paye"/></td>
-            </tr>
-            <tr>
-              <td>National Insurance:</td>
-              <td><input type="text" id="ni"/></td>
-            </tr>
-            <tr>
-              <td>Pension Contributions:</td>
-              <td><input type="text" id="pension"/></td>
-            </tr>
-          </table>
-          <div class="">
-            Net Pay(After tax):
-            <input type="text" id="netPay"/>
-          </div>
+      <div id="results-container">
+          Rate Per Hour: <input type="text" id="basicHrRate" value="8.50"/>   X  <input type="text" id="numHours" value="160"/> Hours
+          <br>
+          Overtime Rate Per Hour: <input type="text" id="overtimeRate" value="1.5"/> times   X   <input type="text" id="overtimeHours" value="0"/> Hours
+          <br>
+          Additional Overtime Rate Per Hour: <input type="text" id="additionalOvertimeRate" value="2"/> times   X   <input type="text" id="additionalOvertimeHours" value="0"/> Hours
+          <br>
+          Additional Compensation: <input type="text" id="additionalCompensation" value="0"/>
+          <br>
+          Additional Compensation(NO NI DEDUCTED): <input type="text" id="additionalCompensationNONI" value="0"/>
       </div>
-    </form>
+      <button type="button" onclick="calculateSalary();">Calculate Now</button>
+      Gross Pay(Before tax): <label id="grossPay"/>
+      <br>
+      PAYE tax: <label id="paye"/>
+      <br>
+      National Insurance: <label id="ni"/>
+      <br>
+      Pension Contributions: <label id="pension"/>
+      <div class="net-pay-container">
+        Net Pay(After tax): <label id="netPay"/>
+      </div>
+    </div>
   </body>
 </html>
