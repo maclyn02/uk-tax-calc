@@ -12,6 +12,7 @@
     <br/>
     <div class="container">
       <h2>My Personal TAX CALCULATOR - UK Version</h2>
+      <hr>
       <table>
         <tr>
           <td class="label">Annual Tax-Free Allowance:</td>
@@ -34,12 +35,12 @@
           <td class="content"><input type="text" id="pensionRate" value="5"/>%</td>
         </tr>
       </table>
-
       <hr>
-      <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
-      <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
-      <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
-
+      <div class="options">
+        <input type="radio" name="timeframe" id="annual" value="annual" onclick="generateAnnualTemplate();">Annual
+        <input type="radio" name="timeframe" id="monthly" value="monthly"onclick="generateMonthlyTemplate();">Monthly
+        <input type="radio" name="timeframe" id="hourly" value="hourly" onclick="generateHourlyTemplate();" checked>Hourly
+      </div>
       <div id="results-container">
         <table>
           <tr>
@@ -48,11 +49,15 @@
           </tr>
           <tr>
             <td class="label">Overtime Rate Per Hour:</td>
-            <td class="content"><input type="text" id="overtimeRate" value="1.5"/> times   X   <input type="text" id="overtimeHours" value="0"/> Hours</td>
+            <td class="content"><input type="text" id="overtimeRate" value="1.5"/> times </td>
+            <td class="label"></td>
+            <td class="content"> X   <input type="text" id="overtimeHours" value="0"/> Hours </td>
           </tr>
           <tr>
             <td class="label">Additional Overtime Rate Per Hour:</td>
-            <td class="content"><input type="text" id="additionalOvertimeRate" value="2"/> times   X   <input type="text" id="additionalOvertimeHours" value="0"/> Hours</td>
+            <td class="content"><input type="text" id="additionalOvertimeRate" value="2"/> times </td>
+            <td class="label"></td>
+            <td class="content"> X   <input type="text" id="additionalOvertimeHours" value="0"/> Hours</td>
           </tr>
           <tr>
             <td class="label">Additional Compensation:</td>

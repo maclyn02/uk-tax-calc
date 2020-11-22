@@ -7,11 +7,15 @@ function generateHourlyTemplate(){
         </tr>
         <tr>
           <td class="label">Overtime Rate Per Hour:</td>
-          <td class="content"><input type="text" id="overtimeRate" value="1.5"/> times   X   <input type="text" id="overtimeHours" value="0"/> Hours</td>
+          <td class="content"><input type="text" id="overtimeRate" value="1.5"/> times </td>
+          <td class="label"></td>
+          <td class="content"> X   <input type="text" id="overtimeHours" value="0"/> Hours </td>
         </tr>
         <tr>
           <td class="label">Additional Overtime Rate Per Hour:</td>
-          <td class="content"><input type="text" id="additionalOvertimeRate" value="2"/> times   X   <input type="text" id="additionalOvertimeHours" value="0"/> Hours</td>
+          <td class="content"><input type="text" id="additionalOvertimeRate" value="2"/> times </td>
+          <td class="label"></td>
+          <td class="content"> X   <input type="text" id="additionalOvertimeHours" value="0"/> Hours</td>
         </tr>
         <tr>
           <td class="label">Additional Compensation:</td>
@@ -43,7 +47,7 @@ function generateMonthlyTemplate(){
     `
 }
 function generateAnnualTemplate(){
-  document.getElementById('results-container').innerHTML =`       
+  document.getElementById('results-container').innerHTML =`
       <table>
         <tr>
           <td class="label">Annual Base Pay:</td>
