@@ -4,7 +4,7 @@
   border-radius: 30px;
   padding: 30px;
   text-align: center;
-  font-size: 2.5;
+  font-size: 2.5em;
 }
 
 table{
@@ -33,6 +33,7 @@ input{
 .options{
   display: flex;
   justify-content: space-evenly;
+  align-items: center;
 }
 
 .options>input{
