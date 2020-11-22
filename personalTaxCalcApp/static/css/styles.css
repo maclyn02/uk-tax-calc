@@ -4,7 +4,7 @@
   border-radius: 30px;
   padding: 30px;
   text-align: center;
-  font-size: 3em;
+  font-size: 2.5;
 }
 
 table{
@@ -32,7 +32,7 @@ input{
 
 .options{
   display: flex;
-  justify-content: center;
+  justify-content: space-evenly;
 }
 
 .options>input{
@@ -54,10 +54,15 @@ button{
   color: white;
 }
 
+button:hover{
+  cursor: pointer;
+  border: 0px;
+}
+
 #results-container{
   background-color: Linen;
   padding: 20px 5px 20px 5px;
-  margin: 50px 5px 50px 5px;
+  margin: 50px -10px 50px -10px;
   border-radius: 20px;
 }
 
@@ -69,10 +74,10 @@ button{
   align-items: center;
   justify-content: center;
   border-radius: 20px;
-  margin: 0px -20px;
+  margin: 0px -10px;
 }
+
 .net-pay-container>input{
-  width: 3.5em;
   border-width: 0px;
   font-size: 1em;
   font-weight: bolder;
