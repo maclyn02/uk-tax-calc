@@ -9,13 +9,20 @@ function calculateSalary(){
       selectedTimeframe = button.value;
   });
 
+  var niAllowance = document.getElementById('niAllowance').value;
+  var annualAllowance = document.getElementById('annualAllowance').value;
+
   switch (selectedTimeframe) {
     case "hourly":  grossPay = calculateHourlyGross();
-                  break;
-    case "monthly":  grossPay = calculateMonthlyGross();
-                  break;
+                    niAllowance/=12;
+                    annualAllowance/=12;
+                    break;
+    case "monthly": grossPay = calculateMonthlyGross();
+                    niAllowance/=12;
+                    annualAllowance/=12;
+                    break;
     case "annual":  grossPay = calculateAnnualGross();
-                  break;
+                    break;
   }
 
   console.log(grossPay);
@@ -27,12 +34,10 @@ function calculateSalary(){
   var grossMinusPension = grossPay - pension;
   console.log(grossMinusPension);
 
-  var niAllowance = document.getElementById('niAllowance').value;
-  var ni = 0.12 * (grossPay - niAllowance/12);
+  var ni = 0.12 * (grossPay - niAllowance);
   console.log(ni);
 
-  var annualAllowance = document.getElementById('annualAllowance').value;
-  var taxableGross = grossPay + Number(additionalCompensationNONI) - pension - annualAllowance/12;
+  var taxableGross = grossPay + Number(additionalCompensationNONI) - pension - annualAllowance;
   var paye = 0.20 * taxableGross;
   console.log(paye);
 
